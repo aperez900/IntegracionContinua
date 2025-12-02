@@ -48,10 +48,20 @@ services:
       - "8080:80"
     networks:
       - app-network
-
+  jenkins:
+    image: jenkins/jenkins:lts
+    user: admin
+    privileged: true
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    volumes:
+      - jenkins_home:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
 networks:
   app-network:
     driver: bridge
 
 volumes:
   mysql-data:
+  jenkins_home:

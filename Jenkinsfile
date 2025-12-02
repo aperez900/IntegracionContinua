@@ -12,9 +12,9 @@ pipeline {
         stage('Build Docker Images') {
             steps {
                 // 2. Construir la imagen del Backend
-                sh 'docker build -t mi-backend:latest ./backend'
+                sh 'docker build -t api_backend:latest ./backend'
                 // 3. Construir la imagen del Frontend
-                sh 'docker build -t mi-frontend:latest ./frontend'
+                sh 'docker build -t web_frontend:latest ./frontend'
             }
         }
 

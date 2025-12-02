@@ -198,6 +198,27 @@ lsof -i :8080
 
 **Verificación**:
 1. Verifica que el backend esté corriendo: `docker compose logs backend`
+
+## ✅ Pruebas y Codecov
+
+Puedes ejecutar las pruebas y generar reportes de cobertura localmente:
+
+Backend:
+```powershell
+cd backend
+npm install
+npm test # ejecuta pruebas con vitest y genera cobertura en backend/coverage/lcov.info
+```
+
+Frontend:
+```powershell
+cd frontend
+npm install
+npm test # ejecuta pruebas con vitest y genera cobertura en frontend/coverage/lcov.info
+```
+
+Para que el flujo de CI suba los reportes a Codecov en repositorios privados, establece un secreto de repositorio llamado `CODECOV_TOKEN` con tu token de Codecov.
+
 2. Verifica que el puerto 3000 esté expuesto: `curl http://localhost:3000/api/health`
 3. Verifica la consola del navegador (F12) para errores de CORS
 

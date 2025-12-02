@@ -3,9 +3,9 @@ pipeline {
 
     stages {
         stage('Checkout') {
-            steps {
-                // 1. Obtener el código de GitHub
-                git 'https://github.com/aperez900/IntegracionContinua.git'
+             steps {
+                git branch: 'main',
+                    url: 'https://github.com/aperez900/IntegracionContinua.git'
             }
         }
         
